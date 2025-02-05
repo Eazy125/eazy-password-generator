@@ -32,9 +32,10 @@ h1{
     align-items: center;
     justify-content: center;
     width: 300px;
+    margin-bottom: 1rem;
     height: 39px;
     color:white;
-    margin-top: 40px;
+    margin-top: 2rem;
     border-radius: 15px;
     border: 2px solid   rgb(124, 209, 40); ;
    
@@ -66,7 +67,7 @@ h2{
 }
  .hidden{
     color:rgb(181, 56, 56);
-    margin-left: 2rem;
+    margin-left: 0.5rem;
     margin-top: -30px;
      
  }
@@ -105,9 +106,10 @@ ul li {
 
 label{
      color: white ;
+      
 }
 .generatep{
-    margin-top: 2.4rem;
+    margin-top: 4rem;
     margin-left: 1.2rem;
 }
 .ops{
@@ -132,16 +134,18 @@ label{
            gap: 4rem;    
     }
 
-       
+    .hidden{
+        margin-left:0.4rem ;
+    }
 
    .ops{
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 5px;
      
 }
 .generatep{
-    margin-top: 2.4rem;
+    margin-top: 4.2rem;
     margin-left: 0.2rem;
 }
    
