@@ -102,11 +102,7 @@ ul li {
     margin-top: 0;
     color: #3498db;
 }
-.plenght{
-    margin-top: 1.5rem;
-    margin-bottom: -1rem;
-    width: 30rem;
-}
+
 label{
      color: white ;
 }
@@ -135,11 +131,9 @@ label{
            display: flex;  
            gap: 4rem;    
     }
-   .plenght{
-       width: 15rem;
-       margin-bottom: 1rem;
+
        
-   }
+
    .ops{
     display: flex;
     flex-direction: column;

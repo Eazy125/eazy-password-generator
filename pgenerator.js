@@ -186,7 +186,7 @@ function generateHTML(){
             <h2 class="js-p-container">${randomPassword}</h2>
     </div>
 
-            <input type="range"class="plenght" id="plenght" min="8" max="32" step="2">
+            
             <div class="select-option">
            
             
