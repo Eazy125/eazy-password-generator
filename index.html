@@ -1,62 +1,173 @@
 <!DOCTYPE html>
-<html>
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>password generator</title>
-      <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-      <header>
-        <h1>PASSWORD GENERATOR</h1>
-      </header> 
-      <div class="password-generator js-password-generator">
-      </div>
-      <div class="write-up">
-      <h1> Why Secure Passwords Matter</h1>
-      <p>
-          In today's digital world, passwords are the first line of defense against cyber threats. Weak or easily guessable passwords can leave your personal information, financial data, and online accounts vulnerable to hackers. Here's why creating strong, secure passwords is crucial:
-      </p>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <h2>1. Protect Against Brute Force Attacks</h2>
-      <p>
-          Hackers use automated tools to try thousands of password combinations in seconds. A strong password with a mix of letters, numbers, and symbols makes it significantly harder for these tools to crack your password.
-      </p>
+    <meta
+        name="description"
+        content="Generate strong, secure passwords with customizable length and character options."
+    >
 
-      <h2>2. Prevent Unauthorized Access</h2>
-      <p>
-          Simple passwords like "123456" or "password" are easy to guess. A unique and complex password ensures that only you can access your accounts.
-      </p>
+    <title>Secure Password Generator</title>
 
-      <h2>3. Safeguard Personal Information</h2>
-      <p>
-          Many online accounts contain sensitive information, such as emails, bank details, and private messages. A secure password helps protect this data from being stolen or misused.
-      </p>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-      <h2>4. Avoid Account Takeovers</h2>
-      <p>
-          Weak passwords can lead to account takeovers, where hackers gain control of your accounts and lock you out. This can result in identity theft, financial loss, or even damage to your reputation.
-      </p>
+<body>
 
-      <h2>5. Comply with Best Practices</h2>
-      <p>
-          Using strong passwords is a fundamental cybersecurity best practice. It not only protects you but also helps maintain the security of the platforms and services you use.
-      </p>
+    <header class="header">
+        <h1>SECURE PASSWORD GENERATOR</h1>
+        <p>Create strong and random passwords in seconds.</p>
+    </header>
 
-      <div class="tips">
-          <h3>Tips for Creating a Strong Password</h3>
-          <ul>
-              <li>Use a mix of uppercase and lowercase letters, numbers, and symbols.</li>
-              <li>Avoid using easily guessable information like your name, birthdate, or common words.</li>
-              <li>Make your password at least 12 characters long.</li>
-              <li>Use a unique password for each account to prevent a single breach from compromising multiple accounts.</li>
-          </ul>
-      </div>
+    <main>
 
-      <p>
-          By using this password generator, you can create strong, random passwords that enhance your online security and keep your data safe from cyber threats. <strong>Stay safe, stay secure!</strong>
-      </p>
-  </div>
-      <script src="script.js"></script>
-    </body>
+        <section class="password-generator">
+
+            <div class="password-display">
+                <span id="passwordOutput">Your password will appear here</span>
+
+                <button
+                    type="button"
+                    id="copyButton"
+                    class="copy-button"
+                    aria-label="Copy generated password"
+                >
+                    Copy
+                </button>
+            </div>
+
+            <div class="length-section">
+                <div class="length-header">
+                    <label for="passwordLength">Password Length</label>
+                    <span id="lengthValue">16</span>
+                </div>
+
+                <input
+                    type="range"
+                    id="passwordLength"
+                    min="8"
+                    max="64"
+                    value="16"
+                >
+            </div>
+
+            <div class="options">
+
+                <label class="option">
+                    <input type="checkbox" id="uppercase" checked>
+                    <span>Uppercase letters</span>
+                </label>
+
+                <label class="option">
+                    <input type="checkbox" id="lowercase" checked>
+                    <span>Lowercase letters</span>
+                </label>
+
+                <label class="option">
+                    <input type="checkbox" id="numbers" checked>
+                    <span>Numbers</span>
+                </label>
+
+                <label class="option">
+                    <input type="checkbox" id="symbols" checked>
+                    <span>Symbols</span>
+                </label>
+
+            </div>
+
+            <div class="strength-container">
+                <div class="strength-header">
+                    <span>Password Strength</span>
+                    <span id="strengthText">Strong</span>
+                </div>
+
+                <div class="strength-bar">
+                    <div id="strengthIndicator"></div>
+                </div>
+            </div>
+
+            <p id="errorMessage" class="error-message"></p>
+
+            <div class="actions">
+                <button
+                    type="button"
+                    id="generateButton"
+                    class="generate-button"
+                >
+                    Generate Password
+                </button>
+            </div>
+
+        </section>
+
+        <section class="write-up">
+
+            <h2>Why Secure Passwords Matter</h2>
+
+            <p>
+                In today's digital world, passwords are one of the first
+                lines of defense against unauthorized access. Weak or
+                reused passwords can make online accounts significantly
+                easier to compromise.
+            </p>
+
+            <h3>1. Protect Against Brute-Force Attacks</h3>
+
+            <p>
+                Attackers can use automated systems to test large numbers
+                of possible passwords. Longer passwords with a variety of
+                characters make this process significantly more difficult.
+            </p>
+
+            <h3>2. Prevent Unauthorized Access</h3>
+
+            <p>
+                Common passwords and predictable information can be easier
+                to guess. A unique randomly generated password provides
+                stronger protection.
+            </p>
+
+            <h3>3. Protect Personal Information</h3>
+
+            <p>
+                Online accounts can contain private messages, personal
+                information, financial information, and other sensitive
+                data. Strong passwords help protect these accounts.
+            </p>
+
+            <h3>4. Avoid Password Reuse</h3>
+
+            <p>
+                Using the same password across multiple websites can create
+                additional risk. If one account is compromised, reused
+                credentials could potentially expose other accounts.
+            </p>
+
+            <div class="tips">
+
+                <h3>Password Security Tips</h3>
+
+                <ul>
+                    <li>Use long, randomly generated passwords.</li>
+                    <li>Use a different password for every important account.</li>
+                    <li>Avoid names, birthdays, and other predictable information.</li>
+                    <li>Consider using a reputable password manager.</li>
+                    <li>Enable multi-factor authentication where available.</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Built with HTML, CSS and JavaScript.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
 </html>
